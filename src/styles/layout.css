@@ -1,0 +1,44 @@
+.shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  padding: 1rem;
+  backdrop-filter: blur(14px);
+}
+.hero { margin-bottom: 1rem; }
+.controls { grid-column: span 4; }
+.stage { grid-column: span 8; }
+.status-panel, .diagnostics { grid-column: span 12; }
+.frame-shell {
+  margin-top: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(159, 179, 200, 0.18);
+  min-height: 480px;
+}
+#stream-frame {
+  width: 100%;
+  min-height: 480px;
+  border: 0;
+  background: #020617;
+}
+.stage__top {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@media (max-width: 920px) {
+  .controls, .stage, .status-panel, .diagnostics { grid-column: span 12; }
+  .frame-shell, #stream-frame { min-height: 320px; }
+}
